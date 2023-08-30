@@ -1,0 +1,155 @@
+/* CSS Reset */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    height: 100vh;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    overflow: hidden;
+}
+
+/* Main Content */
+main {
+    background-color: var(--color-3);
+    height: 100%;
+}
+
+/* Search */
+.search {
+    text-align: center;
+    height: 3rem;
+    width: 15rem;
+    margin: 4rem 0 0 0;
+    background-color: rgba(var(--color-));
+    border: solid rgba(0, 0, 0, 0.03);
+    border-bottom: #f8e8f8 0.15rem solid;
+    font-size: 2rem;
+    font-family: var(--font-family);
+    color: var(--color-1);
+}
+
+.search:focus {
+    outline: none;
+}
+
+/* Search results */
+.results {
+    width: 15rem;
+    height: fit-content;
+    background-color: var(--color-2);
+    position: absolute;
+}
+
+.results ul {
+    list-style-type: none;
+    height: inherit;
+}
+
+.pokemonResult {
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    font-size: 2rem;
+    border: black solid 0.1px;
+}
+
+.pokemonResult:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.pokemonResults img {
+    height: 100%;
+}
+
+/* Main Container */
+.mainContainer {
+    margin-top: 6rem;
+}
+
+.mainContainer,
+.searchContainer {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.fadeOut {
+    transition: opacity 2.5s ease-out;
+}
+
+/* Pokedex */
+.pokedex {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+/* Pokemon Container */
+.pokemonContainer {
+    padding: 3rem 2rem;
+}
+
+/* Pagination Buttons */
+#prev,
+#next {
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--color-1);
+}
+
+#prev {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+#next {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+/* Pokemon Container */
+.pokemonContainer > * {
+    padding-bottom: 1rem;
+}
+
+/* Pokemon */
+.pokemon {
+    height: 10rem;
+}
+
+/* Stats */
+.stats {
+    border: black solid 1px;
+    font-size: 1.3rem;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.stats > * {
+    gap: 4px;
+    width: 105%;
+    padding: 0.2rem;
+}
