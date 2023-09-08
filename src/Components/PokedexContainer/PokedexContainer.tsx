@@ -1,31 +1,21 @@
-import { PropsWithChildren, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { fetchData } from "../../data/api.ts";
-import { navigatePokemons } from "../../navigation/navigatePokemons.ts";
 import Pokedex from "../Pokedex/Pokedex.tsx";
-import Search from "./Search.tsx";
+import { Search } from "./Search.tsx";
 import Loading from "./Loading.tsx";
-function Main(): JSX.Element {
+import { Pokemon } from "../../data/api.ts";
+
+export function PokedexContainer(): JSX.Element {
     const [dataFetched, setDataFetched] = useState<boolean>(false);
     const [pokemonArr, setPokemonArr] = useState<Pokemon[]>([]);
 
+    // const function updateIndex()
+
     const [index, setIndex] = useState<number>(0);
+
     const handleNext = () =>
         index < pokemonArr.length ? setIndex(index + 1) : null;
     const handlePrevious = () => (index > 0 ? setIndex(index - 1) : null);
-
-    // useEffect(() => {
-
-    //     async function init() {
-    //         try {
-    //             const fetchedPokemonArr = await fetchData();
-    //             setPokemonArr(fetchedPokemonArr);
-    //             setDataFetched(true);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     }
-    //     init();
-    // });
 
     useEffect(() => {
         fetchData()
@@ -41,17 +31,15 @@ function Main(): JSX.Element {
 
     return (
         <main className="flex-col just-sta alig-cen">
-            <Search />
+            {dataFetched ? <Search pokemonArr={pokemonArr} /> : null}
             {/* Loading Container */}
             {!dataFetched ? <Loading /> : null} {/* Main Container */}
             {dataFetched ? (
-                <div className="mainContainer visible flex-row just-cen alig-cen">
+                <div className="dexContainer visible flex-row just-cen alig-cen">
                     <button onClick={handlePrevious} id="prev">
                         &lt;
                     </button>
-                    <div className="dexContainer">
-                        <Pokedex pokemon={pokemonArr[index]} />
-                    </div>
+                    <Pokedex pokemon={pokemonArr[index]} />
                     <button onClick={handleNext} id="next">
                         &gt;
                     </button>
@@ -60,5 +48,3 @@ function Main(): JSX.Element {
         </main>
     );
 }
-
-export default Main;

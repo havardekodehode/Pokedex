@@ -15,7 +15,12 @@
 }
 
 /* Base Styles */
+header {
+    background-color: var(--color-1);
+}
 body {
+    background-color: var(--color-3);
+
     margin: 0;
     height: 100vh;
     font-size: var(--font-size);
@@ -25,7 +30,6 @@ body {
 
 /* Main Content */
 main {
-    background-color: var(--color-3);
     height: 100%;
 }
 
@@ -78,11 +82,11 @@ main {
 }
 
 /* Main Container */
-.mainContainer {
+.dexContainer {
     margin-top: 6rem;
 }
 
-.mainContainer,
+.dexContainer,
 .searchContainer {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -100,15 +104,11 @@ main {
     transition: opacity 2.5s ease-out;
 }
 
-/* Pokedex */
-.pokedex {
-    width: 100%;
-    border-radius: 1rem;
-}
-
 /* Pokemon Container */
 .pokemonContainer {
     padding: 3rem 2rem;
+    width: 100%;
+    border-radius: 1rem;
 }
 
 /* Pagination Buttons */
