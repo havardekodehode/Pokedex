@@ -3,7 +3,6 @@ import { PokedexContainer } from "./Components/PokedexContainer/PokedexContainer
 import "./css/index.css";
 import "./css/animations.css";
 import "./css/index.css";
-import "./css/layout.css";
 import "./css/media-quries.css";
 import "./css/navigation.css";
 import "./css/typography.css";
