@@ -1,7 +1,7 @@
-import React from "react";
 import { Pokemon } from "../../data/api";
 import Stats from "./Stats";
 import PokemonHeader from "./PokemonHeader";
+import styles from "./pokedex.module.css";
 
 interface RenderPokedexProps {
     pokemon: Pokemon | null;
@@ -12,7 +12,7 @@ function Pokedex({ pokemon }: RenderPokedexProps): JSX.Element | null {
 
     return (
         <div
-            className="pokemonContainer flex-col just-cen alig-cen"
+            className={`${styles.pokemonContainer} flex-col just-cen alig-cen`}
             style={{ backgroundColor: pokemon.color }}
         >
             <PokemonHeader pokemon={pokemon} />

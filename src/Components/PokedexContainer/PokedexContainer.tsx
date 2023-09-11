@@ -4,6 +4,7 @@ import Pokedex from "../Pokedex/Pokedex.tsx";
 import { Search } from "./Search.tsx";
 import Loading from "./Loading.tsx";
 import { Pokemon } from "../../data/api.ts";
+import styles from "./pokedexContainer.module.css";
 
 export function PokedexContainer(): JSX.Element {
     const [dataFetched, setDataFetched] = useState<boolean>(false);
@@ -31,20 +32,22 @@ export function PokedexContainer(): JSX.Element {
 
     return (
         <main className="flex-col just-sta alig-cen">
-            {dataFetched ? <Search pokemonArr={pokemonArr} /> : null}
+            <Search pokemonArr={pokemonArr} dataFetched={dataFetched} />
             {/* Loading Container */}
             {!dataFetched ? <Loading /> : null} {/* Main Container */}
-            {dataFetched ? (
-                <div className="dexContainer visible flex-row just-cen alig-cen">
-                    <button onClick={handlePrevious} id="prev">
-                        &lt;
-                    </button>
-                    <Pokedex pokemon={pokemonArr[index]} />
-                    <button onClick={handleNext} id="next">
-                        &gt;
-                    </button>
-                </div>
-            ) : null}
+            <div
+                className={`${styles.dexContainer} ${
+                    dataFetched ? "visible" : ""
+                } flex-row just-cen alig-cen`}
+            >
+                <button onClick={handlePrevious} id="prev">
+                    &lt;
+                </button>
+                <Pokedex pokemon={pokemonArr[index]} />
+                <button onClick={handleNext} id="next">
+                    &gt;
+                </button>
+            </div>
         </main>
     );
 }

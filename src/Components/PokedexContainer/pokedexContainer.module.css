@@ -1,0 +1,9 @@
+.dexContainer {
+    margin-top: 6rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in; /* Adjust the duration and timing function as needed */
+}
+
+.dexContainer.visible {
+    opacity: 1;
+}

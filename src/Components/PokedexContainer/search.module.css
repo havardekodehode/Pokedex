@@ -1,0 +1,25 @@
+.searchContainer {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.searchContainer.visible {
+    opacity: 1;
+}
+
+.search {
+    text-align: center;
+    height: 3rem;
+    width: 15rem;
+    margin: 4rem 0 0 0;
+    background-color: rgba(var(--color-));
+    border: solid rgba(0, 0, 0, 0.03);
+    border-bottom: #f8e8f8 0.15rem solid;
+    font-size: 2rem;
+    font-family: var(--font-family);
+    color: var(--color-1);
+}
+
+.search:focus {
+    outline: none;
+}
