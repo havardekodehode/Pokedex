@@ -1,83 +1,49 @@
-# React + TypeScript + Vite
+## Table of contents
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-   [Overview](#overview)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+-   [Author](#author)
+-   [Acknowledgments](#acknowledgments)
 
-Currently, two official plugins are available:
+## Overview
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Simple pokedex, using the PokeAPI display all the first gen pokemons.
 
-## Expanding the ESLint configuration
+### Screenshot
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![](images/landingPageMobile3.png)
 
--   Configure the top-level `parserOptions` property like this:
+<!-- ![](images/screenshotMain.png) -->
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Links
 
--   Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
--   Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
--   Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+-   Live Site URL: Not yet available
 
-```
-hovedoppgaveReact
-├─ .eslintrc.cjs
-├─ .gitignore
-├─ index.html
-├─ package-lock.json
-├─ package.json
-├─ public
-│  └─ vite.svg
-├─ README.md
-├─ src
-│  ├─ App.css
-│  ├─ App.tsx
-│  ├─ assets
-│  │  ├─ pokeball2.svg
-│  │  └─ react.svg
-│  ├─ Components
-│  │  ├─ Header
-│  │  │  └─ Header.tsx
-│  │  ├─ Main
-│  │  │  ├─ Loading.tsx
-│  │  │  ├─ Main.tsx
-│  │  │  └─ Search.tsx
-│  │  ├─ Pokedex
-│  │  │  ├─ Pokedex.tsx
-│  │  │  ├─ PokemonHeader.tsx
-│  │  │  └─ Stats.tsx
-│  │  └─ SearchResults
-│  │     └─ SearchResults.ts
-│  ├─ css
-│  │  ├─ animations.css
-│  │  ├─ index.css
-│  │  ├─ layout.css
-│  │  ├─ media-quries.css
-│  │  ├─ navigation.css
-│  │  ├─ typography.css
-│  │  └─ variables.css
-│  ├─ data
-│  │  ├─ api.ts
-│  │  └─ data.ts
-│  ├─ index.css
-│  ├─ main.tsx
-│  ├─ navigation
-│  │  └─ navigatePokemons.ts
-│  ├─ Utils
-│  │  ├─ animations.ts
-│  │  ├─ HTMLElements.ts
-│  │  ├─ searchUtil
-│  │  └─ setup.ts
-│  └─ vite-env.d.ts
-├─ tsconfig.json
-├─ tsconfig.node.json
-└─ vite.config.ts
+## My process
 
-```
+I put the design together in in this Figma file: https://www.figma.com/file/E6BGv3c7YJXeVLul1FPFd9/Untitled?type=design&node-id=0%3A1&mode=design&t=QIEC7Z7oHc8hrByH-1 I then put the diferrent elements into fitting HTML tags, and started styling it, for mobile only at first. Initially i wrote it in vanilla JS, but changed it to React with Typescript.
+
+### Built with
+
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   Mobile-first workflow
+-   API usage
+-   Vite + React + TS
+
+### What I learned
+
+Using APIs, React and TS.
+
+## Author
+
+-   Website - [havardekodehode]("portfolioSite")
+
+## Acknowledgments
+
+Thanks to Patryk, who assigned this task.
