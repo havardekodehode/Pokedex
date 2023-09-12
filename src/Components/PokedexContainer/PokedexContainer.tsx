@@ -14,6 +14,10 @@ export function PokedexContainer(): JSX.Element {
 
     const [index, setIndex] = useState<number>(0);
 
+    const updateIndex = (newIndex: number) => {
+        setIndex(newIndex);
+    };
+
     const handleNext = () =>
         index < pokemonArr.length ? setIndex(index + 1) : null;
     const handlePrevious = () => (index > 0 ? setIndex(index - 1) : null);
@@ -32,7 +36,11 @@ export function PokedexContainer(): JSX.Element {
 
     return (
         <main className="flex-col just-sta alig-cen">
-            <Search pokemonArr={pokemonArr} dataFetched={dataFetched} />
+            <Search
+                pokemonArr={pokemonArr}
+                dataFetched={dataFetched}
+                updateIndex={updateIndex}
+            />
             {/* Loading Container */}
             {!dataFetched ? <Loading /> : null} {/* Main Container */}
             <div

@@ -3,8 +3,10 @@ import styles from "./searchResults.module.css";
 
 export function SearchResults({
     results,
+    updateIndex,
 }: {
     results: Pokemon[];
+    updateIndex: (newIndex: number) => void;
 }): JSX.Element {
     return (
         <div className={styles.results}>
@@ -12,6 +14,7 @@ export function SearchResults({
                 <li
                     className={styles.pokemonResult}
                     style={{ backgroundColor: pokemon.color }}
+                    onClick={() => updateIndex(pokemon.index)}
                 >
                     <p className="name">{pokemon.name}</p>
                     <img

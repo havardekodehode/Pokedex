@@ -3,11 +3,7 @@ import Stats from "./Stats";
 import PokemonHeader from "./PokemonHeader";
 import styles from "./pokedex.module.css";
 
-interface RenderPokedexProps {
-    pokemon: Pokemon | null;
-}
-
-function Pokedex({ pokemon }: RenderPokedexProps): JSX.Element | null {
+function Pokedex({ pokemon }: { pokemon: Pokemon | null }): JSX.Element | null {
     if (!pokemon) return null;
 
     return (
