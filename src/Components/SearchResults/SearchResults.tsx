@@ -1,20 +1,23 @@
+import { usePokemonContext } from "../../contexts/contexts";
 import { Pokemon } from "../../data/api";
 import styles from "./searchResults.module.css";
 
 export function SearchResults({
     results,
-    updateIndex,
 }: {
     results: Pokemon[];
-    updateIndex: (newIndex: number) => void;
 }): JSX.Element {
+    //context
+    const { setIndex } = usePokemonContext();
+
     return (
         <div className={styles.results}>
             {results.map((pokemon) => (
                 <li
+                    key={pokemon.index}
                     className={styles.pokemonResult}
                     style={{ backgroundColor: pokemon.color }}
-                    onClick={() => updateIndex(pokemon.index)}
+                    onClick={() => setIndex(pokemon.index)}
                 >
                     <p className="name">{pokemon.name}</p>
                     <img

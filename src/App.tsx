@@ -1,5 +1,6 @@
 import { Layout } from "./Components/Layout/Layout";
 import { PokedexContainer } from "./Components/PokedexContainer/PokedexContainer";
+import { PokemonContextProvider } from "./contexts/contexts";
 import "./css/index.css";
 import "./css/animations.css";
 import "./css/index.css";
@@ -11,7 +12,9 @@ import "./css/variables.css";
 function App(): JSX.Element {
     return (
         <Layout>
-            <PokedexContainer />
+            <PokemonContextProvider>
+                <PokedexContainer />
+            </PokemonContextProvider>
         </Layout>
     );
 }

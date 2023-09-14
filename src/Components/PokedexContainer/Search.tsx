@@ -6,11 +6,9 @@ import styles from "./search.module.css";
 export function Search({
     pokemonArr,
     dataFetched,
-    updateIndex,
 }: {
     pokemonArr: Pokemon[];
     dataFetched: boolean;
-    updateIndex: (newIndex: number) => void;
 }): JSX.Element {
     const [inputValue, setInputValue] = useState<string>("");
 
@@ -36,7 +34,7 @@ export function Search({
                 className={styles.search}
             />
             {inputValue.length > 0 ? (
-                <SearchResults results={filteredResults} updateIndex={updateIndex}/>
+                <SearchResults results={filteredResults} />
             ) : null}
         </div>
     );

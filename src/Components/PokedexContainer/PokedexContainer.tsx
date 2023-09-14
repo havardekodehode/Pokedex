@@ -5,22 +5,25 @@ import { Search } from "./Search.tsx";
 import Loading from "./Loading.tsx";
 import { Pokemon } from "../../data/api.ts";
 import styles from "./pokedexContainer.module.css";
+import { usePokemonContext } from "../../contexts/contexts.tsx";
 
 export function PokedexContainer(): JSX.Element {
     const [dataFetched, setDataFetched] = useState<boolean>(false);
     const [pokemonArr, setPokemonArr] = useState<Pokemon[]>([]);
 
-    // const function updateIndex()
+    //context
+    const { index, setIndex } = usePokemonContext();
 
-    const [index, setIndex] = useState<number>(0);
-
-    const updateIndex = (newIndex: number) => {
-        setIndex(newIndex);
+    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        const direction = event.currentTarget.getAttribute("data-direction");
+        if (direction === "next") {
+            setIndex((oldIndex) =>
+                oldIndex < pokemonArr.length - 1 ? oldIndex + 1 : oldIndex
+            );
+        } else if (direction === "previous") {
+            setIndex((oldIndex) => (oldIndex > 0 ? oldIndex - 1 : oldIndex));
+        }
     };
-
-    const handleNext = () =>
-        index < pokemonArr.length ? setIndex(index + 1) : null;
-    const handlePrevious = () => (index > 0 ? setIndex(index - 1) : null);
 
     useEffect(() => {
         fetchData()
@@ -36,11 +39,7 @@ export function PokedexContainer(): JSX.Element {
 
     return (
         <main className="flex-col just-sta alig-cen">
-            <Search
-                pokemonArr={pokemonArr}
-                dataFetched={dataFetched}
-                updateIndex={updateIndex}
-            />
+            <Search pokemonArr={pokemonArr} dataFetched={dataFetched} />
             {/* Loading Container */}
             {!dataFetched ? <Loading /> : null} {/* Main Container */}
             <div
@@ -48,11 +47,19 @@ export function PokedexContainer(): JSX.Element {
                     dataFetched ? "visible" : ""
                 } flex-row just-cen alig-cen`}
             >
-                <button onClick={handlePrevious} id="prev">
+                <button
+                    onClick={handleButtonClick}
+                    id="prev"
+                    data-direction="previous"
+                >
                     &lt;
                 </button>
                 <Pokedex pokemon={pokemonArr[index]} />
-                <button onClick={handleNext} id="next">
+                <button
+                    onClick={handleButtonClick}
+                    id="next"
+                    data-direction="next"
+                >
                     &gt;
                 </button>
             </div>
