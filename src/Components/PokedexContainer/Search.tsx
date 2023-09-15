@@ -1,5 +1,5 @@
 import { Pokemon } from "../../data/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SearchResults } from "../SearchResults/SearchResults";
 import styles from "./search.module.css";
 
@@ -20,6 +20,30 @@ export function Search({
     const filteredResults =
         inputValue.length > 0 ? filterOnSearch(pokemonArr, inputValue) : [];
 
+    useEffect(() => {
+        const handleGlobalClick = (e: MouseEvent) => {
+            const searchContainer = document.querySelector(
+                `.${styles.searchContainer}`
+            );
+
+            if (
+                searchContainer &&
+                e.target instanceof Node &&
+                !searchContainer.contains(e.target)
+            ) {
+                setInputValue("");
+            }
+        };
+
+        // Add the event listener when the component mounts
+        window.addEventListener("click", handleGlobalClick);
+
+        // Remove the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("click", handleGlobalClick);
+        };
+    }, []);
+
     return (
         <div
             className={`${styles.searchContainer} ${
@@ -36,6 +60,9 @@ export function Search({
             {inputValue.length > 0 ? (
                 <SearchResults results={filteredResults} />
             ) : null}
+            {/* {inputValue.length > 0 ? (
+                <SearchResults results={filteredResults} />
+            ) : null} */}
         </div>
     );
 

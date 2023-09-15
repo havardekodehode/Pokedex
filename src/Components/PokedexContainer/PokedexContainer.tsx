@@ -6,6 +6,7 @@ import Loading from "./Loading.tsx";
 import { Pokemon } from "../../data/api.ts";
 import styles from "./pokedexContainer.module.css";
 import { usePokemonContext } from "../../contexts/contexts.tsx";
+// import "../../css/media-queries.css";
 
 export function PokedexContainer(): JSX.Element {
     const [dataFetched, setDataFetched] = useState<boolean>(false);

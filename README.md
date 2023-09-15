@@ -51,3 +51,97 @@ Thanks to Patryk, who assigned this task.
 ```
 
 ```
+
+```
+Pokedex
+├─ .eslintrc.cjs
+├─ .git
+│  ├─ COMMIT_EDITMSG
+│  ├─ config
+│  ├─ description
+│  ├─ HEAD
+│  ├─ hooks
+│  │  ├─ applypatch-msg.sample
+│  │  ├─ commit-msg.sample
+│  │  ├─ fsmonitor-watchman.sample
+│  │  ├─ post-update.sample
+│  │  ├─ pre-applypatch.sample
+│  │  ├─ pre-commit.sample
+│  │  ├─ pre-merge-commit.sample
+│  │  ├─ pre-push.sample
+│  │  ├─ pre-rebase.sample
+│  │  ├─ pre-receive.sample
+│  │  ├─ prepare-commit-msg.sample
+│  │  ├─ push-to-checkout.sample
+│  │  ├─ sendemail-validate.sample
+│  │  └─ update.sample
+│  ├─ index
+│  ├─ info
+│  │  └─ exclude
+│  ├─ objects
+│  │
+│  └─ refs
+│     ├─ heads
+│     │  └─ main
+│     ├─ remotes
+│     │  └─ origin
+│     │     └─ main
+│     └─ tags
+├─ .gitignore
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+│  └─ vite.svg
+├─ README.md
+├─ src
+│  ├─ App.css
+│  ├─ App.tsx
+│  ├─ assets
+│  │  ├─ pokeball2.svg
+│  │  ├─ previewMobile.png
+│  │  └─ react.svg
+│  ├─ Components
+│  │  ├─ Header
+│  │  │  └─ Header.tsx
+│  │  ├─ Layout
+│  │  │  └─ Layout.tsx
+│  │  ├─ Pokedex
+│  │  │  ├─ pokedex.module.css
+│  │  │  ├─ Pokedex.tsx
+│  │  │  ├─ PokemonHeader.tsx
+│  │  │  └─ Stats.tsx
+│  │  ├─ PokedexContainer
+│  │  │  ├─ Loading.tsx
+│  │  │  ├─ pokedexContainer.module.css
+│  │  │  ├─ PokedexContainer.tsx
+│  │  │  ├─ search.module.css
+│  │  │  └─ Search.tsx
+│  │  └─ SearchResults
+│  │     ├─ searchResults.module.css
+│  │     └─ SearchResults.tsx
+│  ├─ contexts
+│  │  └─ contexts.tsx
+│  ├─ css
+│  │  ├─ animations.css
+│  │  ├─ index.css
+│  │  ├─ layout.css
+│  │  ├─ media-queries.css
+│  │  ├─ navigation.css
+│  │  ├─ typography.css
+│  │  └─ variables.css
+│  ├─ data
+│  │  ├─ api.ts
+│  │  ├─ apiInterfaces.ts
+│  │  └─ data.ts
+│  ├─ index.css
+│  ├─ main.tsx
+│  ├─ Utils
+│  │  ├─ HTMLElements.ts
+│  │  └─ searchUtil
+│  └─ vite-env.d.ts
+├─ tsconfig.json
+├─ tsconfig.node.json
+└─ vite.config.ts
+
+```

@@ -6,6 +6,9 @@
     height: fit-content;
     background-color: var(--color-2);
     position: absolute;
+    max-height: 28rem;
+    overflow-y: scroll;
+    /* scroll-; */
 }
 
 .results ul {
@@ -14,11 +17,13 @@
 }
 
 .pokemonResult {
+    text-transform: capitalize;
     display: flex;
     justify-content: space-between;
-    height: 2rem;
+    height: 4rem;
     font-size: 2rem;
     border: black solid 0.1px;
+    padding: 0.3rem;
 }
 
 .pokemonResult:hover {
@@ -26,6 +31,8 @@
     cursor: pointer;
 }
 
-.pokemonResults img {
+.pokemonResult img {
     height: 100%;
+    /* transform: rotate(30deg); */
+    filter: drop-shadow(2px 2px 1px #000000fd);
 }
